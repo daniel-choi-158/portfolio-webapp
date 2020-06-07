@@ -1,16 +1,17 @@
-# Create image based on the official Node image from dockerhub
-FROM node:latest
-# Create a directory where our app will be placed
-#RUN mkdir -p /usr/src/app
-# Change directory so that our commands run inside this new directory
-#WORKDIR /usr/src/app
-# Copy dependency definitions
-#COPY package.json /usr/src/app
-# Install dependecies
-RUN npm install
-# Get all the code needed to run the app
-#COPY . /usr/src/app
-# Expose the port the app runs in
-EXPOSE 4200
-# Serve the app
-CMD ["npm", "start"]
+# Use the official Python image.
+# https://hub.docker.com/_/python
+FROM python:3.7
+
+# Copy local code to the container image.
+ENV APP_HOME /app
+WORKDIR $APP_HOME
+COPY . .
+
+# Install production dependencies.
+RUN pip install Flask gunicorn
+
+# Run the web service on container startup. Here we use the gunicorn
+# webserver, with one worker process and 8 threads.
+# For environments with multiple CPU cores, increase the number of workers
+# to be equal to the cores available.
+CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 app:app
