@@ -1,0 +1,8 @@
+node_modules
+portfolio-frontend/node_modules
+portfolio-frontend/build
+build
+.dockerignore
+Dockerfile
+Dockerfile.prod
+.git
