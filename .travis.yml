@@ -25,30 +25,18 @@ before_install:
 jobs:
   include:
     - stage: build, tag, push image
+      if: type IN (push) and branch = master
       script:
-        - cd frontend/
         - docker pull "$IMAGE_NAME" || true
         - docker build --pull --cache-from "$IMAGE_NAME" --tag "$IMAGE_NAME" .
         - docker image ls
         - docker login -u $REGISTRY_USER -p $REGISTRY_PASSWORD
         - docker tag "$IMAGE_NAME" "${IMAGE_NAME}:${SHORT_SHA}"
         - docker push "${IMAGE_NAME}:${SHORT_SHA}"
+    - stage: test
+      script: docker run --rm ${IMAGE_NAME}:${SHORT_SHA} cat hello.txt
     - stage: deploy image
       script:
+        - gcloud container clusters get-credentials c
         - kubectl rollout restart deployment portfolio-frontend-deployment
         - kubectl get deployments
-#before_script:
-#  - cd frontend/
-#  - docker pull "$IMAGE_NAME" || true
-#script:
-#  - docker build --pull --cache-from "$IMAGE_NAME" --tag "$IMAGE_NAME" .
-#after_script:
-#  - docker images
-#before_deploy:
-#  - docker login -u $REGISTRY_USER -p $REGISTRY_PASSWORD
-#  - docker tag "$IMAGE_NAME" "${IMAGE_NAME}:${SHORT_SHA}"
-#deploy:
-#  provider: script
-#  script: docker push "${IMAGE_NAME}:${SHORT_SHA}"
-#  on:
-#    branch: master
