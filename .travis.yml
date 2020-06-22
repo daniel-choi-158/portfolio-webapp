@@ -9,6 +9,7 @@ branches:
 env:
   global:
     - IMAGE_NAME="danielchoi158/portfolio-frontend"
+    - SHORT_SHA="$(git log -1 --pretty=%h)"
 before_script:
   - cd frontend/
   - docker pull "$IMAGE_NAME" || true
@@ -18,10 +19,10 @@ after_script:
   - docker images
 before_deploy:
   - docker login -u $REGISTRY_USER -p $REGISTRY_PASSWORD
-  - docker tag "$IMAGE_NAME" "${IMAGE_NAME}:latest"
+  - docker tag "$IMAGE_NAME" "${IMAGE_NAME}:${SHORT_SHA}"
 deploy:
   provider: script
-  script: docker push "${IMAGE_NAME}:latest"
+  script: docker push "${IMAGE_NAME}:${SHORT_SHA}"
   # && docker push "${IMAGE_NAME}:${version}"
   on:
     branch: master
