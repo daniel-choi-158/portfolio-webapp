@@ -24,14 +24,12 @@ before_install:
 
 jobs:
   include:
-    - stage: build and tag image
+    - stage: build, tag, push image
       script:
         - cd frontend/
         - docker pull "$IMAGE_NAME" || true
         - docker build --pull --cache-from "$IMAGE_NAME" --tag "$IMAGE_NAME" .
         - docker image ls
-    - stage: push image
-      script:
         - docker login -u $REGISTRY_USER -p $REGISTRY_PASSWORD
         - docker tag "$IMAGE_NAME" "${IMAGE_NAME}:${SHORT_SHA}"
         - docker push "${IMAGE_NAME}:${SHORT_SHA}"
