@@ -39,6 +39,7 @@ jobs:
       script: docker run --rm ${IMAGE_NAME}:${SHORT_SHA} echo hi
     - stage: portfolio-frontend - deploy image
       script:
+        - gcloud config set compute/zone australia-southeast1-a
         - gcloud container clusters get-credentials ${CLUSTER_NAME}
         - kubectl rollout restart deployment portfolio-frontend-deployment
         - kubectl get deployments
