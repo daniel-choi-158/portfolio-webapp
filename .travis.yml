@@ -9,6 +9,7 @@ env:
   global:
     - IMAGE_NAME="danielchoi158/portfolio-frontend"
     - SHORT_SHA="$(git log -1 --pretty=%h)"
+    - CLUSTER_NAME="tf-webapp-268705-gke"
 cache:
   directories:
     - "$HOME/google-cloud-sdk/"
@@ -24,19 +25,20 @@ before_install:
 
 jobs:
   include:
-    - stage: build, tag, push image
+    - stage: portfolio-frontend - build, tag, push image
       if: type IN (push) and branch = master
       script:
         - docker pull "$IMAGE_NAME" || true
+        - cd ./frontend/
         - docker build --pull --cache-from "$IMAGE_NAME" --tag "$IMAGE_NAME" .
         - docker image ls
         - docker login -u $REGISTRY_USER -p $REGISTRY_PASSWORD
         - docker tag "$IMAGE_NAME" "${IMAGE_NAME}:${SHORT_SHA}"
         - docker push "${IMAGE_NAME}:${SHORT_SHA}"
-    - stage: test
+    - stage: portfolio-frontend - test
       script: docker run --rm ${IMAGE_NAME}:${SHORT_SHA} cat hello.txt
-    - stage: deploy image
+    - stage: portfolio-frontend - deploy image
       script:
-        - gcloud container clusters get-credentials c
+        - gcloud container clusters get-credentials ${CLUSTER_NAME}
         - kubectl rollout restart deployment portfolio-frontend-deployment
         - kubectl get deployments
