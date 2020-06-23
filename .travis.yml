@@ -36,7 +36,7 @@ jobs:
         - docker tag "$IMAGE_NAME" "${IMAGE_NAME}:${SHORT_SHA}"
         - docker push "${IMAGE_NAME}:${SHORT_SHA}"
     - stage: portfolio-frontend - test
-      script: docker run --rm ${IMAGE_NAME}:${SHORT_SHA} cat hello.txt
+      script: docker run --rm ${IMAGE_NAME}:${SHORT_SHA} echo hi
     - stage: portfolio-frontend - deploy image
       script:
         - gcloud container clusters get-credentials ${CLUSTER_NAME}
