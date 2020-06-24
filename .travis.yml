@@ -10,6 +10,8 @@ env:
     - IMAGE_NAME="danielchoi158/portfolio-frontend"
     - SHORT_SHA="$(git log -1 --pretty=%h)"
     - CLUSTER_NAME="tf-webapp-268705-gke"
+    - GCLOUD_ZONE="australia-southeast1-a"
+    - GCLOUD_PROJECT="tf-webapp-268705"
 cache:
   directories:
     - "$HOME/google-cloud-sdk/"
@@ -39,7 +41,8 @@ jobs:
       script: docker run --rm ${IMAGE_NAME}:${SHORT_SHA} echo hi
     - stage: portfolio-frontend - deploy image
       script:
-        - gcloud config set compute/zone australia-southeast1-a
+        - gcloud config set compute/zone ${GCLOUD_ZONE}
+        - gcloud config set project ${GCLOUD_PROJECT}
         - gcloud container clusters get-credentials ${CLUSTER_NAME}
         - kubectl rollout restart deployment portfolio-frontend-deployment
         - kubectl get deployments
