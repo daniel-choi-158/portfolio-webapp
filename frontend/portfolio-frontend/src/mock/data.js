@@ -18,7 +18,7 @@ export const heroData = {
 // ABOUT DATA
 export const aboutData = {
   img: 'profile.png',
-  paragraphOne: 'Para One',
+  paragraphOne: "Four years' experience as a DevOps Engineer.",
   paragraphTwo: 'Para Two',
   paragraphThree: 'Para Three',
   resume: 'https://drive.google.com/file/d/11r0InvpNZZ8larKUxwK2iBcwgR7mewCc/view?usp=sharing', // if no resume, the button will not show up
@@ -30,15 +30,6 @@ export const projectsData = [
     id: uuidv1(),
     img: 'project.jpg',
     title: 'This Website',
-    info: '',
-    info2: '',
-    url: '',
-    repo: 'https://github.com/cobidev/react-simplefolio', // if no repo, the button will not show up
-  },
-  {
-    id: uuidv1(),
-    img: 'project.jpg',
-    title: '',
     info: '',
     info2: '',
     url: '',
