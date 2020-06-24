@@ -11,7 +11,7 @@ export const headData = {
 export const heroData = {
   title: '',
   name: 'Daniel.',
-  subtitle: "I'm a DevOps Engineer based in Sydney.",
+  subtitle: "I'm a DevOps & Systems Engineer based in Sydney.",
   cta: 'About me',
 };
 
@@ -21,7 +21,7 @@ export const aboutData = {
   paragraphOne: 'Para One',
   paragraphTwo: 'Para Two',
   paragraphThree: 'Para Three',
-  resume: 'https://www.resumemaker.online/es.php', // if no resume, the button will not show up
+  resume: 'https://drive.google.com/file/d/11r0InvpNZZ8larKUxwK2iBcwgR7mewCc/view?usp=sharing', // if no resume, the button will not show up
 };
 
 // PROJECTS DATA
