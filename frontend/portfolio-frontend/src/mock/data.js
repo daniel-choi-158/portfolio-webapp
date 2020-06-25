@@ -13,23 +13,49 @@ export const heroData = {
   name: 'Daniel.',
   subtitle: "I'm a DevOps & Systems Engineer based in Sydney.",
   cta: 'About me',
+  img: 'emoji.png'
 };
 
 // ABOUT DATA
 export const aboutData = {
   img: 'profile.png',
-  paragraphOne: "Four years' experience as a DevOps Engineer.",
-  paragraphTwo: 'Para Two',
-  paragraphThree: 'Para Three',
+  paragraphOne: "Four years' experience as a DevOps Engineer. Been DevOps since Day One of my technology career.",
+  paragraphTwo: 'Skills & Projects - implementation of major platforms, optimisation, tooling',
+  paragraphThree: 'Interests - Premier League, Investing and Technical Trading',
   resume: 'https://drive.google.com/file/d/11r0InvpNZZ8larKUxwK2iBcwgR7mewCc/view?usp=sharing', // if no resume, the button will not show up
 };
+
+//SKILLS AND EXPERIENCE DATA
+export const skillsExperienceData = [
+  {
+    id: uuidv1(),
+    company: 'Atlassian',
+    info: 'Information about Atlassian',
+    info2: 'Mor information about Atlassian.',
+  },
+  {
+    id: uuidv1(),
+    company: 'Nearmap',
+    info: '',
+    info2: '',
+  },
+  {
+    id: uuidv1(),
+    company: 'Macquarie Group',
+    info: '',
+    info2: '',
+  },
+  
+
+
+];
 
 // PROJECTS DATA
 export const projectsData = [
   {
     id: uuidv1(),
     img: 'project.jpg',
-    title: 'This Website',
+    title: 'Project 1',
     info: '',
     info2: '',
     url: '',
@@ -38,7 +64,7 @@ export const projectsData = [
   {
     id: uuidv1(),
     img: 'project.jpg',
-    title: '',
+    title: 'Project 2',
     info: '',
     info2: '',
     url: '',
