@@ -8,6 +8,7 @@ branches:
 env:
   global:
     - APP_NAME="portfolio-frontend"
+    - DEPLOYMENT_NAME="portfolio-frontend-deployment"
     - IMAGE_NAME="danielchoi158/portfolio-frontend"
     - SHORT_SHA="$(git log -1 --pretty=%h)"
     - CLUSTER_NAME="tf-webapp-268705-gke"
@@ -45,7 +46,7 @@ jobs:
         - gcloud config set compute/zone ${GCLOUD_ZONE}
         - gcloud config set project ${GCLOUD_PROJECT}
         - gcloud container clusters get-credentials ${CLUSTER_NAME}
-        - kubectl set image deployment/nginx-deployment ${APP_NAME}=${IMAGE_NAME}:${SHORT_SHA} --record
+        - kubectl set image deployment/${DEPLOYMENT_NAME} ${APP_NAME}=${IMAGE_NAME}:${SHORT_SHA} --record
         #- kubectl rollout restart deployment portfolio-frontend-deployment
         - kubectl get deployments
         - kubectl get pods
