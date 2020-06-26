@@ -9,18 +9,20 @@ export const headData = {
 
 // HERO DATA
 export const heroData = {
-  title: '',
+  title: 'Hi, my name is',
   name: 'Daniel.',
   subtitle: "I'm a DevOps & Systems Engineer based in Sydney.",
   cta: 'About me',
-  img: 'emoji.png'
+  img: 'emoji.png',
 };
 
 // ABOUT DATA
 export const aboutData = {
   img: 'profile.png',
-  paragraphOne: "Four years' experience as a DevOps Engineer. Been DevOps since Day One of my technology career.",
-  paragraphTwo: 'Skills & Projects - implementation of major platforms, optimisation, tooling',
+  paragraphOne:
+    "Four years' experience as a DevOps Engineer. I am currently serving as a Systems Engineer at Atlassian.",
+  paragraphTwo:
+    'I have experience in deploying platforms onto the Cloud (all as infrastructure-as-code), optimising deployments to adhere to the highest security, availability and resiliency standards. (Talk about outcomes achieved)',
   paragraphThree: 'Interests - Premier League, Investing and Technical Trading',
   resume: 'https://drive.google.com/file/d/11r0InvpNZZ8larKUxwK2iBcwgR7mewCc/view?usp=sharing', // if no resume, the button will not show up
 };
@@ -45,9 +47,6 @@ export const skillsExperienceData = [
     info: '',
     info2: '',
   },
-  
-
-
 ];
 
 // PROJECTS DATA
