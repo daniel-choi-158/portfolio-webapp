@@ -7,7 +7,7 @@ branches:
     - master
 env:
   global:
-    - APP_NAME="portfolio-frontend"
+    - CONTAINER_NAME="portfolio-frontend-container"
     - DEPLOYMENT_NAME="portfolio-frontend-deployment"
     - IMAGE_NAME="danielchoi158/portfolio-frontend"
     - SHORT_SHA="$(git log -1 --pretty=%h)"
@@ -46,7 +46,7 @@ jobs:
         - gcloud config set compute/zone ${GCLOUD_ZONE}
         - gcloud config set project ${GCLOUD_PROJECT}
         - gcloud container clusters get-credentials ${CLUSTER_NAME}
-        - kubectl set image deployment/${DEPLOYMENT_NAME} ${APP_NAME}=${IMAGE_NAME}:${SHORT_SHA} --record
+        - kubectl set image deployment/${DEPLOYMENT_NAME} ${CONTAINER_NAME}=${IMAGE_NAME}:${SHORT_SHA} --record
         #- kubectl rollout restart deployment portfolio-frontend-deployment
         - kubectl get deployments
         - kubectl get pods
