@@ -4,9 +4,10 @@ import Tilt from 'react-tilt';
 import { Container, Row, Col } from 'react-bootstrap';
 import PortfolioContext from '../../context/context';
 import Title from '../Title/Title';
+import ProjectImg from '../Image/ProjectImg';
 
-const SkillsExperience = () => {
-  const { projects } = useContext(PortfolioContext);
+const Experience = () => {
+  const { experiences } = useContext(PortfolioContext);
 
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -26,8 +27,8 @@ const SkillsExperience = () => {
       <Container>
         <div className="project-wrapper">
           <Title title="Experience" />
-          {projects.map((project, index) => {
-            const { title, info, info2, url, repo } = project;
+          {experiences.map((project, index) => {
+            const { company, info, info2, url, repo, img } = project;
 
             return (
               <Row key={index}>
@@ -40,33 +41,11 @@ const SkillsExperience = () => {
                     distance="30px"
                   >
                     <div className="project-wrapper__text">
-                      <h3 className="project-wrapper__text-title">{title || 'Project Title'}</h3>
+                      <h3 className="project-wrapper__text-title">{company || 'Company Name'}</h3>
                       <div>
-                        <p>
-                          {info ||
-                            'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi neque, ipsa animi maiores repellendu distinctioaperiam earum dolor voluptatum consequatur blanditiis inventore debitis fuga numquam voluptate architecto itaque molestiae.'}
-                        </p>
+                        <p>{info || ''}</p>
                         <p className="mb-4">{info2 || ''}</p>
                       </div>
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="cta-btn cta-btn--hero"
-                        href={url || '#!'}
-                      >
-                        See Live
-                      </a>
-
-                      {repo && (
-                        <a
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="cta-btn text-color-main"
-                          href={repo}
-                        >
-                          Source Code
-                        </a>
-                      )}
                     </div>
                   </Fade>
                 </Col>
@@ -97,7 +76,11 @@ const SkillsExperience = () => {
                             reset: true,
                             easing: 'cubic-bezier(.03,.98,.52,.99)',
                           }}
-                        ></Tilt>
+                        >
+                          <div data-tilt className="thumbnail rounded">
+                            <ProjectImg alt={company} filename={img} />
+                          </div>
+                        </Tilt>
                       </a>
                     </div>
                   </Fade>
@@ -111,4 +94,4 @@ const SkillsExperience = () => {
   );
 };
 
-export default SkillsExperience;
+export default Experience;

@@ -23,12 +23,13 @@ export const aboutData = {
     "I have four years' experience as a DevOps Engineer. I have worked in financial services, geo-imaging and technology industries. I am currently serving as a Systems Engineer at Atlassian.",
   paragraphTwo:
     'I have experience in deploying platforms onto the Cloud (all as infrastructure-as-code), optimising deployments to adhere to the highest security, availability and resiliency standards. I have worked closely with both internal and external customers to create smooth user experiences, streamline processes and bring business ideas to life.',
-  paragraphThree: 'Away from work, ...... Premier League, Investing and Technical Trading',
+  paragraphThree:
+    "In my spare time, I enjoy trading the financial markets (FX, CFD's), reading, and watching Premier League Football.",
   resume: 'https://drive.google.com/file/d/11r0InvpNZZ8larKUxwK2iBcwgR7mewCc/view?usp=sharing', // if no resume, the button will not show up
 };
 
-//SKILLS AND EXPERIENCE DATA
-export const skillsExperienceData = [
+//EXPERIENCE DATA
+export const experienceData = [
   {
     id: uuidv1(),
     company: 'Atlassian',
