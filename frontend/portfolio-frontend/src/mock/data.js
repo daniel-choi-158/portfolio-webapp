@@ -2,14 +2,14 @@ import uuidv1 from 'uuid/v1';
 
 // HEAD DATA
 export const headData = {
-  title: 'Daniel Choi | DevOps Engineer', // e.g: 'Name | Developer'
+  title: 'Daniel Choi | DevOps & Systems Engineer',
   lang: 'en', // e.g: en, es, fr, jp
   description: '', // e.g: Welcome to my website
 };
 
 // HERO DATA
 export const heroData = {
-  title: 'Hi, my name is ',
+  title: "Hi, I'm ",
   name: 'Daniel.',
   subtitle: "I'm a DevOps & Systems Engineer based in Sydney.",
   cta: 'About me',
@@ -20,10 +20,10 @@ export const heroData = {
 export const aboutData = {
   img: 'profile.png',
   paragraphOne:
-    "Four years' experience as a DevOps Engineer. I am currently serving as a Systems Engineer at Atlassian.",
+    "I have four years' experience as a DevOps Engineer in the financial services industry. I am currently serving as a Systems Engineer at Atlassian.",
   paragraphTwo:
     'I have experience in deploying platforms onto the Cloud (all as infrastructure-as-code), optimising deployments to adhere to the highest security, availability and resiliency standards. (Talk about outcomes achieved)',
-  paragraphThree: 'Interests - Premier League, Investing and Technical Trading',
+  paragraphThree: 'Away from work, ...... Premier League, Investing and Technical Trading',
   resume: 'https://drive.google.com/file/d/11r0InvpNZZ8larKUxwK2iBcwgR7mewCc/view?usp=sharing', // if no resume, the button will not show up
 };
 
@@ -33,7 +33,7 @@ export const skillsExperienceData = [
     id: uuidv1(),
     company: 'Atlassian',
     info: 'Information about Atlassian',
-    info2: 'Mor information about Atlassian.',
+    info2: 'More information about Atlassian.',
   },
   {
     id: uuidv1(),
@@ -84,12 +84,12 @@ export const footerData = {
     {
       id: uuidv1(),
       name: 'linkedin',
-      url: '',
+      url: 'https://www.linkedin.com/in/danielchoi158/',
     },
     {
       id: uuidv1(),
       name: 'github',
-      url: '',
+      url: 'https://github.com/daniel-choi-158',
     },
   ],
 };

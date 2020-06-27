@@ -26,7 +26,7 @@ const SkillsExperience = () => {
       <Container>
         <div className="project-wrapper">
           <Title title="Experience" />
-          {projects.map((project,index) => {
+          {projects.map((project, index) => {
             const { title, info, info2, url, repo } = project;
 
             return (
@@ -36,7 +36,7 @@ const SkillsExperience = () => {
                     left={isDesktop}
                     bottom={isMobile}
                     duration={1000}
-                    delay={500}
+                    delay={200}
                     distance="30px"
                   >
                     <div className="project-wrapper__text">
@@ -75,7 +75,7 @@ const SkillsExperience = () => {
                     right={isDesktop}
                     bottom={isMobile}
                     duration={1000}
-                    delay={1000}
+                    delay={400}
                     distance="30px"
                   >
                     <div className="project-wrapper__image">
@@ -97,8 +97,7 @@ const SkillsExperience = () => {
                             reset: true,
                             easing: 'cubic-bezier(.03,.98,.52,.99)',
                           }}
-                        >
-                        </Tilt>
+                        ></Tilt>
                       </a>
                     </div>
                   </Fade>
