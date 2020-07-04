@@ -19,6 +19,11 @@ export default function HTML({
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <script
+          data-ad-client="ca-pub-6667880892939907"
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+        ></script>
         {headComponents}
       </head>
       <body {...bodyAttributes}>
