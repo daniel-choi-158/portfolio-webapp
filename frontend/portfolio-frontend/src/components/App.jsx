@@ -21,7 +21,7 @@ function App() {
   const [hero, setHero] = useState({});
   const [about, setAbout] = useState({});
   const [experiences, setExperience] = useState([]);
-  const [projects, setProjects] = useState([]);
+  //const [projects, setProjects] = useState([]);
   const [contact, setContact] = useState({});
   const [footer, setFooter] = useState({});
 
@@ -29,17 +29,16 @@ function App() {
     setHero({ ...heroData });
     setAbout({ ...aboutData });
     setExperience([...experienceData]);
-    setProjects([...projectsData]);
+    //setProjects([...projectsData]);
     setContact({ ...contactData });
     setFooter({ ...footerData });
   }, []);
 
   return (
-    <PortfolioProvider value={{ hero, about, experiences, projects, contact, footer }}>
+    <PortfolioProvider value={{ hero, about, experiences, contact, footer }}>
       <Hero />
       <About />
       <Experience />
-      <Projects />
       <Contact />
       <Footer />
     </PortfolioProvider>
