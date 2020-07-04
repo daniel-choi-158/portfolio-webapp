@@ -23,7 +23,7 @@ const Experience = () => {
   }, []);
 
   return (
-    <section id="projects">
+    <section id="experience">
       <Container>
         <div className="project-wrapper">
           <Title title="Experience" />

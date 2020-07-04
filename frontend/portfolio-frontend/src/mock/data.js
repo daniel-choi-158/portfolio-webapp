@@ -74,9 +74,23 @@ export const projectsData = [
 
 // CONTACT DATA
 export const contactData = {
-  cta: '',
-  btn: '',
-  email: 'danielchoi158@gmail.com',
+  networks: [
+    {
+      id: uuidv1(),
+      name: 'linkedin',
+      url: 'https://www.linkedin.com/in/danielchoi158/',
+    },
+    {
+      id: uuidv1(),
+      name: 'envelope',
+      url: 'mailto:danielchoi158@gmail.com',
+    },
+    {
+      id: uuidv1(),
+      name: 'github',
+      url: 'https://github.com/daniel-choi-158',
+    },
+  ],
 };
 
 // FOOTER DATA
@@ -91,6 +105,11 @@ export const footerData = {
       id: uuidv1(),
       name: 'github',
       url: 'https://github.com/daniel-choi-158',
+    },
+    {
+      id: uuidv1(),
+      name: 'envelope',
+      url: 'mailto:danielchoi158@gmail.com',
     },
   ],
 };
