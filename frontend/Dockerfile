@@ -7,6 +7,7 @@ WORKDIR /app
 # ENV PATH /app/node_modules/.bin:$PATH
 COPY ./portfolio-frontend/package.json ./
 COPY ./portfolio-frontend/package-lock.json ./
+RUN npm install libvips@8.10.5 -g
 RUN npm ci
 # RUN npm install react-scripts@3.4.1 -g --silent
 COPY ./portfolio-frontend/ ./
