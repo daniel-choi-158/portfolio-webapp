@@ -2,7 +2,7 @@
 FROM node:14.19.0-alpine as build
 
 # RUN npm install -g npm@8.3.2
-RUN apk --no-cache --virtual --update add g++ make python3 py3-pip gcc
+RUN apk --no-cache --virtual --update add g++ make python3 py3-pip libvips-dev
 WORKDIR /app
 # ENV PATH /app/node_modules/.bin:$PATH
 COPY ./portfolio-frontend/package.json ./
