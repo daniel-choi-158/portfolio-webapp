@@ -1,5 +1,5 @@
 # build environment
-FROM --platform=linux/amd64 node:14-alpine as build
+FROM --platform=linux/amd64 node:14.19.0-alpine as build
 
 # RUN npm install -g npm@8.3.2
 RUN apk --no-cache --virtual --update add g++ make python3 py3-pip
