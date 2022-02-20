@@ -7,13 +7,13 @@ WORKDIR /app
 # ENV PATH /app/node_modules/.bin:$PATH
 COPY ./portfolio-frontend/package.json ./
 COPY ./portfolio-frontend/package-lock.json ./
-RUN npm ci
-RUN npm install react-scripts@3.4.1 -g --silent
+RUN npm install
+# RUN npm install react-scripts@3.4.1 -g --silent
 COPY ./portfolio-frontend/ ./
 RUN npm run build
 # install node modules and build assets
 #RUN yarn install && yarn build
-
+#info sharp Detected globally-installed libvips v8.12.2
 
 # production environment
 FROM nginx:stable-alpine
