@@ -1,5 +1,5 @@
 # build environment
-FROM --platform=linux/amd64 node:14.19.0-alpine as build
+FROM node:14.19.0-alpine as build
 
 # RUN npm install -g npm@8.3.2
 RUN apk --no-cache --virtual --update add g++ make python3 py3-pip
@@ -7,8 +7,7 @@ WORKDIR /app
 # ENV PATH /app/node_modules/.bin:$PATH
 COPY ./portfolio-frontend/package.json ./
 COPY ./portfolio-frontend/package-lock.json ./
-RUN npm install libvips -g --silent
-RUN npm install
+RUN npm ci
 # RUN npm install react-scripts@3.4.1 -g --silent
 COPY ./portfolio-frontend/ ./
 RUN npm run build
