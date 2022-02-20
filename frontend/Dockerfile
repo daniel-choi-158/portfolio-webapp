@@ -1,5 +1,4 @@
 # build environment
-#FROM --platform=linux/arm64 node:14-alpine as build
 FROM --platform=linux/amd64 node:14-alpine as build
 
 # RUN npm install -g npm@8.3.2
