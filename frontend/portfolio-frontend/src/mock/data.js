@@ -1,4 +1,5 @@
-import uuidv1 from 'uuid/v1';
+// import uuidv4 from 'uuid/v1';
+import { v4 as uuidv4 } from 'uuid';
 
 // HEAD DATA
 export const headData = {
@@ -31,19 +32,19 @@ export const aboutData = {
 //EXPERIENCE DATA
 export const experienceData = [
   {
-    id: uuidv1(),
+    id: uuidv4(),
     company: 'Atlassian',
     info: '',
     info2: '',
   },
   {
-    id: uuidv1(),
+    id: uuidv4(),
     company: 'Nearmap',
     info: '',
     info2: '',
   },
   {
-    id: uuidv1(),
+    id: uuidv4(),
     company: 'Macquarie Group',
     info: '',
     info2: '',
@@ -53,7 +54,7 @@ export const experienceData = [
 // PROJECTS DATA
 export const projectsData = [
   {
-    id: uuidv1(),
+    id: uuidv4(),
     img: 'project.jpg',
     title: 'Project 1',
     info: '',
@@ -62,7 +63,7 @@ export const projectsData = [
     repo: 'https://github.com/cobidev/react-simplefolio', // if no repo, the button will not show up
   },
   {
-    id: uuidv1(),
+    id: uuidv4(),
     img: 'project.jpg',
     title: 'Project 2',
     info: '',
@@ -76,17 +77,17 @@ export const projectsData = [
 export const contactData = {
   networks: [
     {
-      id: uuidv1(),
+      id: uuidv4(),
       name: 'linkedin',
       url: 'https://www.linkedin.com/in/danielchoi158/',
     },
     {
-      id: uuidv1(),
+      id: uuidv4(),
       name: 'envelope',
       url: 'mailto:danielchoi158@gmail.com',
     },
     {
-      id: uuidv1(),
+      id: uuidv4(),
       name: 'github',
       url: 'https://github.com/daniel-choi-158',
     },
@@ -97,17 +98,17 @@ export const contactData = {
 export const footerData = {
   networks: [
     {
-      id: uuidv1(),
+      id: uuidv4(),
       name: 'linkedin',
       url: 'https://www.linkedin.com/in/danielchoi158/',
     },
     {
-      id: uuidv1(),
+      id: uuidv4(),
       name: 'github',
       url: 'https://github.com/daniel-choi-158',
     },
     {
-      id: uuidv1(),
+      id: uuidv4(),
       name: 'envelope',
       url: 'mailto:danielchoi158@gmail.com',
     },
